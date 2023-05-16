@@ -17,7 +17,7 @@ function WhyChooseUs() {
       maxW="8xl"
       mx="auto"
       gap={showBlueBox ? 48 : 8}
-      px={12}
+      px={4}
       py={24}
     >
       {/* Left Div */}
@@ -47,7 +47,7 @@ function WhyChooseUs() {
 
       {/* Right Div */}
       <Box textAlign="start" mr={8}>
-        <Text fontSize="3xl" fontWeight="bold" mb={6}>
+        <Text fontSize="4xl" fontWeight="bold" mb={6}>
           Why Choose Us?
         </Text>
         <Text fontSize="xl" mb={6}>

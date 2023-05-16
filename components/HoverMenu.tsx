@@ -30,7 +30,7 @@ export default function HoverMenu({
   return (
     <Menu isOpen={isOpen}>
       <MenuButton
-        px={4}
+        px={8}
         py={2}
         aria-label="treatment"
         _hover={{

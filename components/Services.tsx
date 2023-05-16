@@ -18,8 +18,8 @@ const services = [
 
 function OurServices() {
   return (
-    <Box textAlign="center" px={12} py={24} maxW="8xl" mx="auto" bg="blue.100">
-      <Text fontSize="3xl" fontWeight="bold" mb={12}>
+    <Box textAlign="center" px={4} py={24} maxW="8xl" mx="auto" bg="blue.100">
+      <Text fontSize="4xl" fontWeight="bold" mb={12}>
         Treatment For You
       </Text>
       <Grid

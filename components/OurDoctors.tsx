@@ -8,9 +8,51 @@ import {
   Text,
   useBreakpointValue,
 } from '@chakra-ui/react';
+import React, { useState } from 'react';
+import {
+  HiOutlineArrowLongLeft,
+  HiOutlineArrowLongRight,
+} from 'react-icons/hi2';
+
+const doctorsData = [
+  {
+    name: 'Dr. Ankit Gupta',
+    description:
+      'Dr. Ankit Gupta specializes in advanced orthodontic treatments like Invisible braces, Adult orthodontic treatment, Accelerated tooth movement, Lingual braces, and Invisalign. Experience precise techniques and outstanding results.',
+    image: 'dr_ankit.webp',
+  },
+  {
+    name: 'Dr. Akanksha Gupta',
+    description:
+      'Dr. Akanksha Gupta is a Root Canal Specialist and Cosmetic Dentist. She holds a Masters degree in Oral Medicine & Radiology and is a certified Endodontist. With over 7 years of experience, Dr. Gupta specializes in root canal therapy and full mouth rehabilitation cases.',
+    image: 'dr_akanksha.webp',
+  },
+  {
+    name: 'Dr. Ankita Maniya',
+    description:
+      'Dr. Ankita Maniya is a specialist in root canal therapy and full mouth rehabilitation cases. With over 5 years of experience, she has worked alongside Dr. Guptas at the center, focusing on providing high-quality dental care.',
+    image: 'dr_ankita.webp',
+  },
+];
 
 function OurDoctors() {
+  const [currentDoctorIndex, setCurrentDoctorIndex] = useState(0);
   const showBlueBox = useBreakpointValue({ base: false, md: true });
+
+  const handlePrevDoctor = () => {
+    setCurrentDoctorIndex((prevIndex) =>
+      prevIndex === 0 ? doctorsData.length - 1 : prevIndex - 1
+    );
+  };
+
+  const handleNextDoctor = () => {
+    setCurrentDoctorIndex((prevIndex) =>
+      prevIndex === doctorsData.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const currentDoctor = doctorsData[currentDoctorIndex];
+
   return (
     <Grid
       templateColumns={['1fr', '1fr', '4fr 6fr']}
@@ -18,28 +60,28 @@ function OurDoctors() {
       maxW="8xl"
       mx="auto"
       gap={showBlueBox ? 0 : 8}
-      px={12}
+      px={8}
       py={24}
     >
       {/* Left Div */}
       <Flex align="flex-end">
         <Image
-          src="./img/why-choose-us.jpeg"
+          src={`./img/doctors/${currentDoctor.image}`}
           alt="Image"
           w="full"
-          height="full"
+          h="700"
           objectFit="cover"
         />
       </Flex>
 
       {/* Right Div */}
-      <Grid templateRows={['auto 1fr']} textAlign="center">
+      <Grid templateRows={['auto 1fr']}>
         <Box px={16} py={8} minH="0">
-          <Text fontSize="3xl" fontWeight="bold" mb={6}>
+          <Text fontSize="4xl" textAlign="start" fontWeight="bold" mb={6}>
             Meet Our Experts
           </Text>
 
-          <Text fontSize="xl" mb={6}>
+          <Text fontSize="xl" textAlign="start" mb={6}>
             Meet our team of experienced dental experts who are dedicated to
             providing high-quality care and personalized treatment options for
             all your dental needs
@@ -53,31 +95,76 @@ function OurDoctors() {
           display="flex"
           flexDirection="column"
           justifyContent="center"
+          alignItems="flex-start"
         >
-          <Text fontSize="2xl" fontWeight="bold" textAlign="start" mb={4}>
-            Dr. Ankit Gupta, BDS, MDS
+          <Text fontSize="3xl" textAlign="start" fontWeight="semibold">
+            {currentDoctor.name}
           </Text>
           <Text fontSize="xl" textAlign="start">
-            Dr. Ankit Gupta, a highly skilled Orthodontist, specializes in
-            advanced treatments like Invisible braces, Adult orthodontic
-            treatment, Accelerated tooth movement, Lingual braces, and Clear
-            aligners (Invisalign). With a focus on exceptional care and
-            outstanding results, he creates personalized treatment plans for
-            each patient. Experience Dr. Gupta's precise techniques, attention
-            to detail, and commitment to patient satisfaction. Affordable
-            treatment fees are based on individual malocclusion. Discover the
-            transformative power of expert orthodontic care and achieve a
-            confident smile.
-            <Link
-              href="/read-more"
-              color="white"
-              textDecoration="underline"
-              fontWeight="bold"
-              mt={4}
-            >
-              Read More
-            </Link>
+            {currentDoctor.description}
           </Text>
+          <Link
+            href="/read-more"
+            color="white"
+            textDecoration="underline"
+            fontWeight="bold"
+            mb={8}
+          >
+            Read More
+          </Link>
+          <Flex justify="space-between" mt={4}>
+            {/* left arrow */}
+
+            <Button
+              size="lg"
+              colorScheme="transparent"
+              borderRadius="0"
+              transition="width 0.3s ease-out"
+              onClick={handlePrevDoctor}
+              pos="relative"
+              _hover={{
+                '& > div': { width: '100%' },
+              }}
+            >
+              <Box
+                width="0%"
+                height="100%"
+                left="0"
+                pos="absolute"
+                bg="linear-gradient(to right, rgba(255,255,255,0.4) 50%, transparent 50%)"
+                transition="width 0.3s ease-out"
+                display="flex"
+                alignItems="center"
+                justifyContent="flex-start"
+              />
+              <Image src="./img/arrows/left.png" alt="Left Arrow" />
+            </Button>
+            {/* right arrow */}
+            <Button
+              size="lg"
+              colorScheme="transparent"
+              borderRadius="0"
+              transition="width 0.3s ease-out"
+              onClick={handleNextDoctor}
+              pos="relative"
+              _hover={{
+                '& > div': { width: '100%' },
+              }}
+            >
+              <Image src="./img/arrows/right.png" alt="Right Arrow" />
+              <Box
+                width="0%"
+                height="100%"
+                right="0"
+                pos="absolute"
+                bg="linear-gradient(to left, rgba(255,255,255,0.4) 50%, transparent 50%)"
+                transition="width 0.3s ease-out"
+                display="flex"
+                alignItems="center"
+                justifyContent="flex-start"
+              />
+            </Button>
+          </Flex>
         </Box>
       </Grid>
     </Grid>

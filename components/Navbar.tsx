@@ -19,11 +19,12 @@ function Navbar() {
       <Flex
         as="nav"
         align="center"
+        maxW="8xl"
         justify="center" // Center the navbar horizontally
         w="full"
         mx="auto"
         gap={6}
-        px={12}
+        px={8}
       >
         <Box display="flex" alignItems="center" fontWeight="bold" fontSize="lg">
           <Image
@@ -37,6 +38,7 @@ function Navbar() {
         <Spacer />
 
         <Flex display={['none', 'none', 'flex']} alignItems="center">
+          <HoverMenu label="Home" items={[]} />
           <HoverMenu
             label="Treatments"
             items={[
@@ -55,13 +57,6 @@ function Navbar() {
               'Smile Makeover',
             ]}
           />
-
-          <Divider
-            orientation="vertical"
-            height="20px"
-            width="1px"
-            bg="rgba(0,0,0,0.4)"
-          />
           <HoverMenu
             label="Patient Information"
             items={[
@@ -74,19 +69,9 @@ function Navbar() {
               'Post Surgical Instructions',
             ]}
           />
-          <Divider
-            orientation="vertical"
-            height="20px"
-            width="1px"
-            bg="rgba(0,0,0,0.4)"
-          />
+
           <HoverMenu label="About Us" items={[]} />
-          <Divider
-            orientation="vertical"
-            height="20px"
-            width="1px"
-            bg="rgba(0,0,0,0.4)"
-          />
+
           <a href="tel:123-456-7890">
             {' '}
             <HoverMenu color="blue.500" label="Call" items={[]} />

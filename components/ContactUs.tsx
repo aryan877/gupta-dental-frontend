@@ -8,7 +8,7 @@ function ContactUs() {
       maxW="8xl"
       mx="auto"
       gap={6}
-      px={12}
+      px={8}
       py={24}
     >
       {/* Left Div */}
@@ -19,7 +19,7 @@ function ContactUs() {
       >
         <Box opacity={1} h="full" bg="white" p={16}>
           <Flex direction="column" align="center" mb={2}>
-            <Image src="./svg/clock.svg" mb={4} boxSize={24} />
+            <Image src="./svg/clock.svg" mb={8} boxSize={24} />
             <Text fontWeight="bold" fontSize="2xl">
               Clinic Timings
             </Text>
@@ -43,7 +43,7 @@ function ContactUs() {
       >
         <Box opacity={1} h="full" bg="white" p={16}>
           <Flex direction="column" align="center" mb={2}>
-            <Image src="./svg/contact.svg" mb={4} boxSize={24} />
+            <Image src="./svg/contact.svg" mb={8} boxSize={24} />
             <Text fontWeight="bold" fontSize="2xl">
               Contact Us
             </Text>
