@@ -1,50 +1,97 @@
-import { Box, Flex, Grid, Image, Text } from '@chakra-ui/react';
+import {
+  Box,
+  Button,
+  Flex,
+  Grid,
+  Image,
+  Text,
+  useBreakpointValue,
+} from '@chakra-ui/react';
 
 function WhyChooseUs() {
+  const showBlueBox = useBreakpointValue({ base: false, md: true });
   return (
     <Grid
-      templateColumns={['1fr', '2fr', '1fr 2fr']}
+      templateColumns={['1fr', '1fr', '1fr 1fr']}
       textAlign="center"
       maxW="8xl"
       mx="auto"
-      gap={48}
+      gap={showBlueBox ? 48 : 8}
       px={12}
-      my={24}
+      py={24}
     >
       {/* Left Div */}
       <Box position="relative">
-        <Box
-          position="absolute"
-          top={20}
-          left={0}
-          width="50%"
-          height="60vh"
-          backgroundColor="blue.500"
-          zIndex={-1}
-        />
+        {showBlueBox && (
+          <Box
+            position="absolute"
+            top={20}
+            left={0}
+            width="50%"
+            height={600}
+            backgroundColor="blue.500"
+            zIndex={-1}
+          />
+        )}
         <Image
-          src="./img/why-choose-us.jpg"
+          src="./img/why-choose-us.jpeg"
           alt="Image"
-          position="absolute"
+          position={showBlueBox ? 'absolute' : 'static'}
           left={20}
           right={0}
+          height={600}
           w="full"
           objectFit="cover"
-          height="60vh"
         />
       </Box>
 
       {/* Right Div */}
-      <Box textAlign="start">
-        <Text fontWeight="bold" fontSize="4xl" mb={4}>
+      <Box textAlign="start" mr={8}>
+        <Text fontSize="3xl" fontWeight="bold" mb={6}>
           Why Choose Us?
         </Text>
-        <Box fontSize="xl">
-          <Text>
-            Our team consists of highly experienced professionals in the
-            industry.
+        <Text fontSize="xl" mb={6}>
+          Experience exceptional dental care with Gupta Dental – your trusted
+          choice for comprehensive and personalized oral health solutions
+        </Text>
+        <Flex alignItems="flex-start" fontSize="xl" mb={6}>
+          <Image src="./svg/tick.svg" alt="Tick" boxSize={6} mr={4} />
+          <Text fontWeight="semibold">
+            World-class dental treatment by our best dentists
           </Text>
-        </Box>
+        </Flex>
+        <Flex alignItems="flex-start" fontSize="xl" mb={6}>
+          <Image src="./svg/tick.svg" alt="Tick" boxSize={6} mr={4} />
+          <Text fontWeight="semibold">Hygienic and salubrious environment</Text>
+        </Flex>
+
+        <Flex alignItems="flex-start" fontSize="xl" mb={6}>
+          <Image src="./svg/tick.svg" alt="Tick" boxSize={6} mr={4} />
+          <Text fontWeight="semibold">
+            Friendly staff, clean facility, and excellent customer service
+          </Text>
+        </Flex>
+        <Flex alignItems="flex-start" fontSize="xl" mb={6}>
+          <Image src="./svg/tick.svg" alt="Tick" boxSize={6} mr={4} />
+          <Text fontWeight="semibold">
+            Expertise in dental implants and other advanced techniques
+          </Text>
+        </Flex>
+        <Flex alignItems="flex-start" fontSize="xl" mb={6}>
+          <Image src="./svg/tick.svg" alt="Tick" boxSize={6} mr={4} />
+          <Text fontWeight="semibold">
+            Led by renowned dental surgeon with over 8 years of experience
+          </Text>
+        </Flex>
+        <Button
+          colorScheme="blue"
+          borderRadius="0"
+          fontSize="lg"
+          p={8}
+          size="md"
+        >
+          Book Appointment
+        </Button>
       </Box>
     </Grid>
   );

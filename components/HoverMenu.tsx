@@ -11,9 +11,11 @@ import { isEmpty } from 'lodash';
 export default function HoverMenu({
   label,
   items,
+  color = '',
 }: {
   label: string;
   items: string[];
+  color?: string;
 }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -35,7 +37,7 @@ export default function HoverMenu({
           color: 'blue.500',
         }}
         fontWeight="bold"
-        fontSize="sm"
+        color={color ? color : ''}
         onMouseEnter={handleMenuEnter}
         textTransform="uppercase"
         onMouseLeave={handleMenuLeave}
