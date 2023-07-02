@@ -39,6 +39,7 @@ export default function HoverMenu({
         fontWeight="bold"
         color={color ? color : ''}
         onMouseEnter={handleMenuEnter}
+        fontSize="sm"
         textTransform="uppercase"
         onMouseLeave={handleMenuLeave}
       >

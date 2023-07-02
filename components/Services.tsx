@@ -18,7 +18,7 @@ const services = [
 
 function OurServices() {
   return (
-    <Box textAlign="center" px={4} py={24} maxW="8xl" mx="auto" bg="blue.100">
+    <Box textAlign="center" px={6} py={24} maxW="8xl" mx="auto">
       <Text fontSize="4xl" fontWeight="bold" mb={12}>
         Treatment For You
       </Text>

@@ -9,20 +9,20 @@ import {
 } from '@chakra-ui/react';
 
 function WhyChooseUs() {
-  const showBlueBox = useBreakpointValue({ base: false, md: true });
+  const MdWidth = useBreakpointValue({ base: false, md: true });
   return (
     <Grid
       templateColumns={['1fr', '1fr', '1fr 1fr']}
       textAlign="center"
       maxW="8xl"
       mx="auto"
-      gap={showBlueBox ? 48 : 8}
-      px={4}
+      gap={MdWidth ? 48 : 8}
+      px={8}
       py={24}
     >
       {/* Left Div */}
       <Box position="relative">
-        {showBlueBox && (
+        {MdWidth && (
           <Box
             position="absolute"
             top={20}
@@ -36,7 +36,7 @@ function WhyChooseUs() {
         <Image
           src="./img/why-choose-us.jpeg"
           alt="Image"
-          position={showBlueBox ? 'absolute' : 'static'}
+          position={MdWidth ? 'absolute' : 'static'}
           left={20}
           right={0}
           height={600}

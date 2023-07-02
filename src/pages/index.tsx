@@ -11,10 +11,10 @@ import {
   useDisclosure,
 } from '@chakra-ui/react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import CarouselComponent from '../../components/Carousel';
 import ContactUs from '../../components/ContactUs';
+import Footer from '../../components/Footer';
 import HoverMenu from '../../components/HoverMenu';
 import Navbar from '../../components/Navbar';
 import OurDoctors from '../../components/OurDoctors';
@@ -33,6 +33,7 @@ export default function Home() {
       <WhyChooseUs />
       <OurServices />
       <OurDoctors />
+      <Footer />
       <Drawer placement="right" onClose={onClose} isOpen={isOpen}>
         <DrawerOverlay>
           <DrawerContent>

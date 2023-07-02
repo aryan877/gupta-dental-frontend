@@ -7,6 +7,7 @@ import {
   IconButton,
   Image,
   Spacer,
+  Text,
   useDisclosure,
 } from '@chakra-ui/react';
 import React from 'react';
@@ -15,7 +16,7 @@ import HoverMenu from './HoverMenu';
 function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
-    <Box bg="gray.50" pos="fixed" top="0" h={20} zIndex={9999} w="full">
+    <Box bg="gray.50" pos="fixed" top="0" zIndex={9999} w="full" opacity={0.9}>
       <Flex
         as="nav"
         align="center"
@@ -26,15 +27,30 @@ function Navbar() {
         gap={6}
         px={8}
       >
-        <Box display="flex" alignItems="center" fontWeight="bold" fontSize="lg">
+        <Box display="flex" alignItems="center" fontSize="lg">
           <Image
-            src="./img/logo.png"
+            src="./img/CLINIC_LOGO.svg"
             alt="Logo"
-            h={12}
-            my={4}
+            h={20}
+            my={0}
             objectFit="contain"
           />
+          <Box
+            mt={4}
+            ml={4}
+            alignItems="start"
+            display="flex"
+            flexDirection="column"
+          >
+            <Text fontSize="md" fontWeight="bold">
+              Dr. Gupta's
+            </Text>
+            <Text fontSize="xs" fontWeight="bold" mt={-4}>
+              Dental Clinic & Orthodontic Centre
+            </Text>
+          </Box>
         </Box>
+
         <Spacer />
 
         <Flex display={['none', 'none', 'flex']} alignItems="center">

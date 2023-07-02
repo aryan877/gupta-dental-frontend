@@ -2,8 +2,8 @@
 const nextConfig = {
   reactStrictMode: true,
   experimental: {
-    forceSwcTransforms: true
-  }
+    forceSwcTransforms: true,
+  },
 }
 
 module.exports = nextConfig

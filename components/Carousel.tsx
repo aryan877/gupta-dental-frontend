@@ -7,7 +7,7 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 function CarouselComponent() {
   return (
-    <Box mt={20}>
+    <Box>
       <Carousel interval={3000}>
         <Carousel.Item>
           <Image

@@ -18,13 +18,13 @@ const doctorsData = [
   {
     name: 'Dr. Ankit Gupta',
     description:
-      'Dr. Ankit Gupta specializes in advanced orthodontic treatments like Invisible braces, Adult orthodontic treatment, Accelerated tooth movement, Lingual braces, and Invisalign. Experience precise techniques and outstanding results.',
+      'Dr. Ankit Gupta specializes in advanced orthodontic treatments, including invisible braces, adult orthodontic treatment, accelerated tooth movement, lingual braces, and Invisalign. Experience his precise techniques and achieve outstanding results.',
     image: 'dr_ankit.webp',
   },
   {
     name: 'Dr. Akanksha Gupta',
     description:
-      'Dr. Akanksha Gupta is a Root Canal Specialist and Cosmetic Dentist. She holds a Masters degree in Oral Medicine & Radiology and is a certified Endodontist. With over 7 years of experience, Dr. Gupta specializes in root canal therapy and full mouth rehabilitation cases.',
+      "Dr. Akanksha Gupta is a root canal specialist and cosmetic dentist. She holds a master's degree in Oral Medicine & Radiology and is a certified endodontist. With over 7 years of experience, Dr. Gupta specializes in root canal therapy and full mouth rehabilitation cases.",
     image: 'dr_akanksha.webp',
   },
   {
