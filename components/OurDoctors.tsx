@@ -37,7 +37,7 @@ const doctorsData = [
 
 function OurDoctors() {
   const [currentDoctorIndex, setCurrentDoctorIndex] = useState(0);
-  const showBlueBox = useBreakpointValue({ base: false, md: true });
+  const MdWidth = useBreakpointValue({ base: false, md: true });
 
   const handlePrevDoctor = () => {
     setCurrentDoctorIndex((prevIndex) =>
@@ -57,11 +57,11 @@ function OurDoctors() {
     <Grid
       templateColumns={['1fr', '1fr', '4fr 6fr']}
       textAlign="center"
-      maxW="8xl"
+      maxW="7xl"
       mx="auto"
-      gap={showBlueBox ? 0 : 8}
-      px={8}
-      py={24}
+      gap={MdWidth ? 0 : 8}
+      px={4}
+      py={12}
     >
       {/* Left Div */}
       <Flex align="flex-end">
@@ -69,19 +69,19 @@ function OurDoctors() {
           src={`./img/doctors/${currentDoctor.image}`}
           alt="Image"
           w="full"
-          h="700"
+          h={MdWidth ? 700 : 400}
           objectFit="cover"
         />
       </Flex>
 
       {/* Right Div */}
       <Grid templateRows={['auto 1fr']}>
-        <Box px={16} py={8} minH="0">
+        <Box px={MdWidth ? 16 : 0} py={MdWidth ? 8 : 4} minH="0">
           <Text fontSize="4xl" textAlign="start" fontWeight="bold" mb={6}>
             Meet Our Experts
           </Text>
 
-          <Text fontSize="xl" textAlign="start" mb={6}>
+          <Text fontSize="lg" textAlign="start" mb={6}>
             Meet our team of experienced dental experts who are dedicated to
             providing high-quality care and personalized treatment options for
             all your dental needs
@@ -90,7 +90,7 @@ function OurDoctors() {
         <Box
           bg="blue.500"
           color="white"
-          px={16}
+          px={MdWidth ? 16 : 8}
           py={8}
           display="flex"
           flexDirection="column"
@@ -100,7 +100,7 @@ function OurDoctors() {
           <Text fontSize="3xl" textAlign="start" fontWeight="semibold">
             {currentDoctor.name}
           </Text>
-          <Text fontSize="xl" textAlign="start">
+          <Text fontSize="lg" textAlign="start">
             {currentDoctor.description}
           </Text>
           <Link

@@ -6,33 +6,34 @@ import { FaCalendarAlt } from 'react-icons/fa';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 function CarouselComponent() {
+  const carouselItems = [
+    {
+      src: './img/carousel/display_0.webp',
+      alt: 'Carousel Item 1',
+    },
+    {
+      src: './img/carousel/display_1.webp',
+      alt: 'Carousel Item 2',
+    },
+    {
+      src: './img/carousel/display_2.webp',
+      alt: 'Carousel Item 3',
+    },
+  ];
+
   return (
     <Box>
       <Carousel interval={3000}>
-        <Carousel.Item>
-          <Image
-            className="d-block w-100"
-            src="./img/display_0.jpeg"
-            alt="Carousel Item 1"
-            style={{ height: '540px', objectFit: 'cover' }}
-          />
-        </Carousel.Item>
-        <Carousel.Item>
-          <Image
-            className="d-block w-100"
-            src="./img/display_1.jpeg"
-            alt="Carousel Item 2"
-            style={{ height: '540px', objectFit: 'cover' }}
-          />
-        </Carousel.Item>
-        <Carousel.Item>
-          <Image
-            className="d-block w-100"
-            src="./img/display_2.jpeg"
-            alt="Carousel Item 2"
-            style={{ height: '540px', objectFit: 'cover' }}
-          />
-        </Carousel.Item>
+        {carouselItems.map((item, index) => (
+          <Carousel.Item key={index}>
+            <Image
+              className="d-block w-100"
+              src={item.src}
+              alt={item.alt}
+              style={{ height: '80vh', objectFit: 'cover' }}
+            />
+          </Carousel.Item>
+        ))}
       </Carousel>
     </Box>
   );

@@ -20,6 +20,7 @@ import Navbar from '../../components/Navbar';
 import OurDoctors from '../../components/OurDoctors';
 import OurServices from '../../components/Services';
 import Stats from '../../components/Stats';
+import Transformations from '../../components/Transformations';
 import WhyChooseUs from '../../components/WhyChooseUs';
 export default function Home() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -32,6 +33,7 @@ export default function Home() {
       <ContactUs />
       <WhyChooseUs />
       <OurServices />
+      <Transformations />
       <OurDoctors />
       <Footer />
       <Drawer placement="right" onClose={onClose} isOpen={isOpen}>

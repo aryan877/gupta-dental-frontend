@@ -33,12 +33,13 @@ function Stats() {
       bg="blue.500"
       alignItems="center"
       w="full"
+      px={4}
       color="white"
       py={4}
     >
       <VStack spacing={2} textAlign="center">
         <Image src="./svg/patient.svg" boxSize="3rem" />
-        <Heading as="h3" size="xl" fontWeight="bold">
+        <Heading as="h3" size="lg" fontWeight="bold">
           <CountUp start={0} end={happyCustomers} duration={2} separator="," />+
         </Heading>
         <Text fontSize="lg" fontWeight="semibold">
@@ -48,7 +49,7 @@ function Stats() {
       <Divider orientation="vertical" />
       <VStack spacing={2} textAlign="center">
         <Image src="./svg/reviews.svg" boxSize="3rem" />
-        <Heading as="h3" size="xl" fontWeight="bold">
+        <Heading as="h3" size="lg" fontWeight="bold">
           <CountUp start={0} end={practoReviews} duration={2} separator="," />+
         </Heading>
         <Text fontSize="lg" fontWeight="semibold">

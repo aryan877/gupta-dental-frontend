@@ -18,7 +18,7 @@ const services = [
 
 function OurServices() {
   return (
-    <Box textAlign="center" px={6} py={24} maxW="8xl" mx="auto">
+    <Box textAlign="center" px={4} py={12} maxW="7xl" mx="auto">
       <Text fontSize="4xl" fontWeight="bold" mb={12}>
         Treatment For You
       </Text>
@@ -49,7 +49,8 @@ function OurServices() {
             _hover={{
               backgroundColor: 'blue.500',
               color: 'white',
-              boxShadow: '0 0 4px #32B2FF',
+              boxShadow: '0 0 4px #0145E8',
+              transform: 'scale(1.1)',
             }}
           >
             <Box

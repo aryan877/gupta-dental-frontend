@@ -6,8 +6,11 @@ import {
   MenuList,
   Text,
   useDisclosure,
+  useMediaQuery,
 } from '@chakra-ui/react';
 import { isEmpty } from 'lodash';
+import Link from 'next/link';
+
 export default function HoverMenu({
   label,
   items,
@@ -27,6 +30,8 @@ export default function HoverMenu({
     onClose();
   };
 
+  const [isBelow1372px] = useMediaQuery('(max-width: 1372px)');
+
   return (
     <Menu isOpen={isOpen}>
       <MenuButton
@@ -39,7 +44,7 @@ export default function HoverMenu({
         fontWeight="bold"
         color={color ? color : ''}
         onMouseEnter={handleMenuEnter}
-        fontSize="sm"
+        fontSize={isBelow1372px ? 'xs' : 'sm'}
         textTransform="uppercase"
         onMouseLeave={handleMenuLeave}
       >
@@ -54,9 +59,15 @@ export default function HoverMenu({
           style={{ boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)' }}
         >
           {items.map((item, index) => (
-            <MenuItem fontWeight="bold" fontSize="sm" key={index}>
-              {item}
-            </MenuItem>
+            <Link href={`/treatment/${item}`}>
+              <MenuItem
+                fontWeight="bold"
+                fontSize={isBelow1372px ? 'xs' : 'sm'}
+                key={index}
+              >
+                {item}
+              </MenuItem>
+            </Link>
           ))}
         </MenuList>
       )}

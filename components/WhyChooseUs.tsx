@@ -14,11 +14,11 @@ function WhyChooseUs() {
     <Grid
       templateColumns={['1fr', '1fr', '1fr 1fr']}
       textAlign="center"
-      maxW="8xl"
+      maxW="7xl"
       mx="auto"
       gap={MdWidth ? 48 : 8}
-      px={8}
-      py={24}
+      px={4}
+      py={12}
     >
       {/* Left Div */}
       <Box position="relative">
@@ -50,35 +50,35 @@ function WhyChooseUs() {
         <Text fontSize="4xl" fontWeight="bold" mb={6}>
           Why Choose Us?
         </Text>
-        <Text fontSize="xl" mb={6}>
+        <Text fontSize="lg" mb={6}>
           Experience exceptional dental care with Gupta Dental – your trusted
           choice for comprehensive and personalized oral health solutions
         </Text>
-        <Flex alignItems="flex-start" fontSize="xl" mb={6}>
-          <Image src="./svg/tick.svg" alt="Tick" boxSize={6} mr={4} />
+        <Flex alignItems="flex-start" fontSize="lg" mb={6}>
+          <Image src="./svg/tick.svg" alt="Tick" boxSize={6} mr={4} mt={1} />
           <Text fontWeight="semibold">
             World-class dental treatment by our best dentists
           </Text>
         </Flex>
-        <Flex alignItems="flex-start" fontSize="xl" mb={6}>
-          <Image src="./svg/tick.svg" alt="Tick" boxSize={6} mr={4} />
+        <Flex alignItems="flex-start" fontSize="lg" mb={6}>
+          <Image src="./svg/tick.svg" alt="Tick" boxSize={6} mr={4} mt={1} />
           <Text fontWeight="semibold">Hygienic and salubrious environment</Text>
         </Flex>
 
-        <Flex alignItems="flex-start" fontSize="xl" mb={6}>
-          <Image src="./svg/tick.svg" alt="Tick" boxSize={6} mr={4} />
+        <Flex alignItems="flex-start" fontSize="lg" mb={6}>
+          <Image src="./svg/tick.svg" alt="Tick" boxSize={6} mr={4} mt={1} />
           <Text fontWeight="semibold">
             Friendly staff, clean facility, and excellent customer service
           </Text>
         </Flex>
-        <Flex alignItems="flex-start" fontSize="xl" mb={6}>
-          <Image src="./svg/tick.svg" alt="Tick" boxSize={6} mr={4} />
+        <Flex alignItems="flex-start" fontSize="lg" mb={6}>
+          <Image src="./svg/tick.svg" alt="Tick" boxSize={6} mr={4} mt={1} />
           <Text fontWeight="semibold">
             Expertise in dental implants and other advanced techniques
           </Text>
         </Flex>
-        <Flex alignItems="flex-start" fontSize="xl" mb={6}>
-          <Image src="./svg/tick.svg" alt="Tick" boxSize={6} mr={4} />
+        <Flex alignItems="flex-start" fontSize="lg" mb={6}>
+          <Image src="./svg/tick.svg" alt="Tick" boxSize={6} mr={4} mt={1} />
           <Text fontWeight="semibold">
             Led by renowned dental surgeon with over 8 years of experience
           </Text>
