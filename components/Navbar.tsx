@@ -104,7 +104,7 @@ function Navbar() {
           </DrawerBody>
         </DrawerContent>
       </Drawer>
-      <Box bg="gray.50" pos="fixed" top="0" zIndex={99} w="full">
+      <Box opacity={0.9} bg="gray.50" pos="fixed" top="0" zIndex={99} w="full">
         <Box as="nav" w="full" bg="blue.500">
           <Flex
             justify="space-between"
@@ -115,16 +115,16 @@ function Navbar() {
             py={2}
             align="center" // Center the content vertically
           >
-            <Text color="white" fontSize="sm" mb={0}>
+            <Text color="white" fontSize="md" mb={0}>
               Your smile, our priority.
             </Text>
             <HStack gap={8}>
               {isLargerThan744 && (
-                <Text color="white" mb={0} fontSize="sm">
+                <Text color="white" mb={0} fontSize="md">
                   Email: braces.guptadental@gmail.com
                 </Text>
               )}
-              <Text color="white" fontSize="sm" mb={0}>
+              <Text color="white" fontSize="md" mb={0}>
                 Call: +91 83779 90994
               </Text>
             </HStack>
@@ -134,7 +134,6 @@ function Navbar() {
         <Flex
           as="nav"
           align="center"
-          // opacity={0.9}
           maxW="8xl"
           justify="center" // Center the navbar horizontally
           w="full"
